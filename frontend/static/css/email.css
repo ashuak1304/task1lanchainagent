@@ -1,0 +1,111 @@
+/* Styles for email-related components */
+
+/* Email list */
+.email-list {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .email-item {
+    display: flex;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .email-item:hover {
+    background-color: var(--light-background);
+  }
+  
+  .email-item.unread {
+    font-weight: bold;
+    background-color: rgba(66, 133, 244, 0.05);
+  }
+  
+  .email-item:last-child {
+    border-bottom: none;
+  }
+  
+  .email-sender {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .email-subject {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 16px;
+  }
+  
+  .email-date {
+    color: var(--light-text);
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+  
+  /* Email view */
+  .email-view {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .email-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .email-subject-header {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  
+  .email-metadata {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light-text);
+    font-size: 0.9rem;
+  }
+  
+  .email-content {
+    line-height: 1.6;
+  }
+  
+  /* Compose email */
+  .compose-form {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 16px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: var(--font-family);
+  }
+  
+  textarea.form-control {
+    min-height: 200px;
+    resize: vertical;
+  }
+  

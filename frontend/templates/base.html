@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AI Personal Email Assistant{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/email.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">AI Email Assistant</div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('inbox') }}">Inbox</a></li>
+                    <li><a href="{{ url_for('compose') }}">Compose</a></li>
+                    <li><a href="{{ url_for('settings') }}">Settings</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div>&copy; 2025 AI Personal Email Assistant</div>
+            <div>Powered by AI</div>
+        </div>
+    </footer>
+
+    <div id="loader" class="loader" style="display: none;"></div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/email.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/compose.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/ai-features.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

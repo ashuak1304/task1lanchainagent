@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Settings - AI Personal Email Assistant{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <aside class="sidebar">
+        <ul class="sidebar-menu">
+            <li class="sidebar-menu-item">
+                <a href="{{ url_for('inbox') }}" class="sidebar-menu-link">
+                    <span class="sidebar-menu-icon">📥</span>
+                    Inbox
+                </a>
+            </li>
+            <li class="sidebar-menu-item">
+                <a href="{{ url_for('settings') }}" class="sidebar-menu-link active">
+                    <span class="sidebar-menu-icon">⚙️</span>
+                    Settings
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <div class="main-content">
+        <h1 class="dashboard-title">Settings</h1>
+
+        <form id="settings-form" class="settings-form">
+            <h2>Email Settings</h2>
+            <div class="form-group">
+                <label for="email-address">Email Address</label>
+                <input type="email" id="email-address" name="email_address" class="form-control" value="{{ user.email }}" required>
+            </div>
+
+            <h2>Integration Settings</h2>
+            <div class="form-group">
+                <label for="slack-webhook">Slack Webhook URL</label>
+                <input type="url" id="slack-webhook" name="slack_webhook" class="form-control" value="{{ user.slack_webhook }}">
+            </div>
+            <div class="form-group">
+                <label for="calendar-id">Google Calendar ID</label>
+                <input type="text" id="calendar-id" name="calendar_id" class="form-control" value="{{ user.calendar_id }}">
+            </div>
+
+            <h2>AI Assistant Settings</h2>
+            <div class="form-group">
+                <label for="ai-confidence">AI Confidence Threshold</label>
+                <input type="range" id="ai-confidence" name="ai_confidence" min="0" max="100" step="5" value="{{ user.ai_confidence }}" class="form-control">
+                <span id="ai-confidence-value">{{ user.ai_confidence }}%</span>
+            </div>
+            <div class="form-group">
+                <label for="auto-reply">Enable Auto-Reply</label>
+                <input type="checkbox" id="auto-reply" name="auto_reply" {% if user.auto_reply %}checked{% endif %}>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save Settings</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const confidenceSlider = document.getElementById('ai-confidence');
+        const confidenceValue = document.getElementById('ai-confidence-value');
+
+        confidenceSlider.addEventListener('input', function() {
+            confidenceValue.textContent = this.value + '%';
+        });
+
+        document.getElementById('settings-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            saveSettings();
+        });
+    });
+
+    function saveSettings() {
+        const formData = new FormData(document.getElementById('settings-form'));
+        
+        fetch('/api/settings', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showSuccess('Settings saved successfully!');
+            } else {
+                showError('Failed to save settings. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error saving settings:', error);
+            showError('An error occurred while saving settings.');
+        });
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,91 @@
+/* Dashboard layout and components */
+.dashboard {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 20px;
+  }
+  
+  .sidebar {
+    background-color: var(--light-background);
+    border-radius: 8px;
+    padding: 16px;
+    height: calc(100vh - 140px);
+    position: sticky;
+    top: 80px;
+  }
+  
+  .sidebar-menu {
+    list-style: none;
+  }
+  
+  .sidebar-menu-item {
+    margin-bottom: 8px;
+  }
+  
+  .sidebar-menu-link {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+  
+  .sidebar-menu-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .sidebar-menu-link.active {
+    background-color: rgba(66, 133, 244, 0.1);
+    color: var(--primary-color);
+    font-weight: 500;
+  }
+  
+  .sidebar-menu-icon {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+  }
+  
+  .main-content {
+    padding: 16px;
+  }
+  
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .dashboard-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .stat-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: var(--shadow);
+  }
+  
+  .stat-value {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  
+  .stat-label {
+    color: var(--light-text);
+    font-size: 0.9rem;
+  }
+  

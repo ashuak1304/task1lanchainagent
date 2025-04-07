@@ -1,0 +1,75 @@
+/* Button styles */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    font-family: var(--font-family);
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #3367d6;
+  }
+  
+  .btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #2d9348;
+  }
+  
+  .btn-accent {
+    background-color: var(--accent-color);
+    color: white;
+  }
+  
+  .btn-accent:hover {
+    background-color: #d62516;
+  }
+  
+  .btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+  }
+  
+  .btn-outline:hover {
+    background-color: rgba(66, 133, 244, 0.1);
+  }
+  
+  .btn-sm {
+    padding: 4px 8px;
+    font-size: 0.85rem;
+  }
+  
+  .btn-lg {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+  }
+  
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
+  
+  .btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-icon i {
+    margin-right: 8px;
+  }
+  

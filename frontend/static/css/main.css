@@ -1,0 +1,106 @@
+/* Main stylesheet for AI Personal Email Assistant */
+:root {
+    --primary-color: #4285f4;
+    --secondary-color: #34a853;
+    --accent-color: #ea4335;
+    --text-color: #202124;
+    --light-text: #5f6368;
+    --background-color: #ffffff;
+    --light-background: #f8f9fa;
+    --border-color: #dadce0;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --font-family: 'Roboto', Arial, sans-serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: var(--shadow);
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* Navigation */
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav ul li {
+    margin-left: 1.5rem;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+  }
+  
+  nav ul li a:hover {
+    opacity: 0.8;
+  }
+  
+  /* Main content area */
+  main {
+    padding: 2rem 0;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: var(--light-background);
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border-color);
+    margin-top: 2rem;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Utility classes */
+  .text-center {
+    text-align: center;
+  }
+  
+  .mt-1 { margin-top: 0.5rem; }
+  .mt-2 { margin-top: 1rem; }
+  .mt-3 { margin-top: 1.5rem; }
+  .mt-4 { margin-top: 2rem; }
+  
+  .mb-1 { margin-bottom: 0.5rem; }
+  .mb-2 { margin-bottom: 1rem; }
+  .mb-3 { margin-bottom: 1.5rem; }
+  .mb-4 { margin-bottom: 2rem; }
+  
